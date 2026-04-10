@@ -1,3 +1,6 @@
+# LINK DO PROJETO NO GITHUB PAGES
+https://daviflferreira.github.io/projeto-calculadora/
+
 # Calculadora React
 
 ## 1. Visão Geral
