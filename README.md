@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Calculadora React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Visão Geral
+Projeto de calculadora web desenvolvido com React, com foco em operações básicas, controle de estado e componentização.
 
-## Available Scripts
+## 2. Funcionalidades
+- Entrada de dígitos (`0-9`)
+- Operações matemáticas (`+`, `-`, `*`, `/`)
+- Cálculo com `=`
+- Limpeza total com `AC`
+- Suporte a números decimais (`.`)
+- Bloqueio de múltiplos pontos decimais no mesmo número
+- Tratamento de resultados inválidos (`NaN`/`Infinity`)
 
-In the project directory, you can run:
+## 3. Tecnologias
+- React
+- JavaScript (ES6+)
+- CSS3 (Flexbox + Grid)
+- Create React App
 
-### `npm start`
+## 4. Estrutura do Projeto
+- `public/`
+  - `index.html`: template HTML base
+  - `manifest.json`: metadados PWA
+  - `robots.txt`: diretivas para crawlers
+- `src/`
+  - `index.js`: entrada da aplicação
+  - `index.css`: estilos globais
+  - `main/Calculator.jsx`: lógica da calculadora
+  - `main/Calculator.css`: layout da calculadora
+  - `components/Button.jsx`: componente de botão
+  - `components/Button.css`: estilos dos botões
+  - `components/Display.jsx`: componente de visor
+  - `components/Display.css`: estilos do visor
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 5. Arquitetura e Fluxo
+1. `index.js` renderiza a aplicação no elemento `#root`.
+2. `Calculator.jsx` centraliza estado e regras de negócio.
+3. `Button.jsx` dispara eventos de clique e envia `label` para funções do pai.
+4. `Display.jsx` exibe o valor atual do estado.
+5. CSS organiza layout e aparência visual.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 6. Estado da Calculadora
+- `displayValue`: valor mostrado no visor
+- `clearDisplay`: define se o próximo dígito limpa o visor
+- `operation`: operação atual selecionada
+- `values`: dois operandos da conta
+- `current`: índice do operando atual (`0` ou `1`)
 
-### `npm test`
+## 7. Métodos Principais
+- `clearMemory()`: restaura estado inicial.
+- `addDigit(n)`: adiciona dígitos/ponto ao display e atualiza operando atual.
+- `setOperation(operation)`: define operação ou executa cálculo quando necessário.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 8. Estilização
+- Centralização global com Flexbox (`body`, `.app`)
+- Calculadora com CSS Grid (`.calculator`)
+- Botões com variações visuais:
+  - padrão
+  - operação (`.operation`)
+  - largura dupla (`.double`)
+  - largura tripla (`.triple`)
+- Título com animação rainbow (`@keyframes colorRotate`)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 9. Scripts NPM
+```bash
+npm start
+npm run build
+npm test
+npm run eject
